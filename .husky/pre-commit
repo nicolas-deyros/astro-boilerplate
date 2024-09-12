@@ -1,3 +1,5 @@
 npm run prettier
 npm run stylelint
 npm run lint
+# Testing Hooks Without Committing
+# exit 1
