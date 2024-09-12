@@ -2,5 +2,5 @@
 export default {
   extends: ["stylelint-config-html", "stylelint-config-html/astro"],
   rules: {},
-  ignoreFiles: ["**/*.json", "*.config.*", "**/*.md", "**/env.*.*"],
+  ignoreFiles: ["**/*.json", "*.config.*", "**/*.md", "**/env.*.*", "**/db/**"],
 };
