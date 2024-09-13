@@ -228,7 +228,8 @@ npx --no -- commitlint --edit \
 
 It will trigger commitlint. Commits should follow the (Conventional Commits)[https://www.conventionalcommits.org/en/v1.0.0/]
 
-> [!NOTE] Adding TailwindCSS
+> **Notes:**
+>  Adding TailwindCSS
 
 If you would like to add TailwindCSS to you project instead of building your own CSS, follow these steps:
 
