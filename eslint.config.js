@@ -7,6 +7,7 @@ import jsxA11y from "eslint-plugin-jsx-a11y";
 export default [
   { files: ["**/*.{js,mjs,cjs,ts,tsx,astro}"] },
   { languageOptions: { globals: globals.browser } },
+  { ignores: ["**/.astro/types.d.ts", "db/**", "**/env.d.ts"] },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
