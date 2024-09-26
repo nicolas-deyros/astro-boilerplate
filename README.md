@@ -208,6 +208,9 @@ npm install --save-dev @commitlint/{cli,config-conventional}
 # On Windows, run the following code instead of the previous one
 
 npm install --save-dev @commitlint/config-conventional @commitlint/cli
+
+#Configure commitlint to use conventional config
+echo "export default { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
 ```
 
 Config the `pre-commit` file of the `.husky/`
@@ -229,7 +232,7 @@ npx --no -- commitlint --edit \
 It will trigger commitlint. Commits should follow the (Conventional Commits)[https://www.conventionalcommits.org/en/v1.0.0/]
 
 > **Notes:**
->  Adding TailwindCSS
+> Adding TailwindCSS
 
 If you would like to add TailwindCSS to you project instead of building your own CSS, follow these steps:
 
