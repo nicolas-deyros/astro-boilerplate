@@ -1,17 +1,38 @@
+:root {
+  --primary-color: #3245ff;
+  --secondary-color: #bc52ee;
+  --text-color: #111827;
+  --hover-text-color: rgb(78, 80, 86);
+  --button-hover-color: rgb(230, 230, 230);
+  --background-blur: 100px;
+  --backdrop-blur: 50px;
+  --font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
+    Arial, sans-serif;
+  --monospace-font-family: ui-monospace, "Cascadia Code", "Source Code Pro",
+    Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  --font-size-h1: 22px;
+  --font-size-h2: 20px;
+  --font-size-p: 16px;
+  --line-height-p: 24px;
+  --gap: 16px;
+  --padding: 16px;
+  --border-radius: 10px;
+  --box-border-radius: 16px;
+}
+
 #background {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
-  filter: blur(100px);
+  filter: blur(var(--background-blur));
 }
 
 #container {
-  font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
-    Arial, sans-serif;
+  font-family: var(--font-family);
   height: 100%;
+  container-type: inline-size;
 }
 
 main {
@@ -25,54 +46,57 @@ main {
   align-items: start;
   flex-direction: column;
   justify-content: center;
-  padding: 16px;
+  padding: var(--padding);
 }
 
 h1 {
-  font-size: 22px;
+  font-size: var(--font-size-h1);
   margin-top: 0.25em;
 }
 
 #links {
   display: flex;
-  gap: 16px;
+  gap: var(--gap);
 }
 
 #links a {
   display: flex;
   align-items: center;
   padding: 10px 12px;
-  color: #111827;
+  color: var(--text-color);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 #links a:hover {
-  color: rgb(78, 80, 86);
+  color: var(--hover-text-color);
 }
 
 #links a svg {
   height: 1em;
-  margin-left: 8px;
+  margin-inline-start: 8px;
 }
 
 #links a.button {
   color: white;
-  background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+  background: linear-gradient(
+    83.21deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.12),
     inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-  border-radius: 10px;
+  border-radius: var(--border-radius);
 }
 
 #links a.button:hover {
-  color: rgb(230, 230, 230);
+  color: var(--button-hover-color);
   box-shadow: none;
 }
 
 pre {
-  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
-    "DejaVu Sans Mono", monospace;
+  font-family: var(--monospace-font-family);
   font-weight: normal;
   background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
   -webkit-background-clip: text;
@@ -84,14 +108,14 @@ pre {
 h2 {
   margin: 0 0 1em;
   font-weight: normal;
-  color: #111827;
-  font-size: 20px;
+  color: var(--text-color);
+  font-size: var(--font-size-h2);
 }
 
 p {
   color: #4b5563;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: var(--font-size-p);
+  line-height: var(--line-height-p);
   letter-spacing: -0.006em;
   margin: 0;
 }
@@ -107,33 +131,33 @@ code {
 }
 
 .box {
-  padding: 16px;
+  padding: var(--padding);
   background: rgba(255, 255, 255, 1);
-  border-radius: 16px;
+  border-radius: var(--box-border-radius);
   border: 1px solid white;
 }
 
 #news {
   position: absolute;
-  bottom: 16px;
-  right: 16px;
+  bottom: var(--padding);
+  right: var(--padding);
   max-width: 300px;
   text-decoration: none;
   transition: background 0.2s;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(var(--backdrop-blur));
 }
 
 #news:hover {
   background: rgba(255, 255, 255, 0.55);
 }
 
-@media screen and (max-height: 368px) {
+@container (max-height: 368px) {
   #news {
     display: none;
   }
 }
 
-@media screen and (max-width: 768px) {
+@container (max-width: 768px) {
   #container {
     display: flex;
     flex-direction: column;
@@ -153,8 +177,8 @@ code {
   }
 
   #news {
-    right: 16px;
-    left: 16px;
+    right: var(--padding);
+    left: var(--padding);
     bottom: 2.5rem;
     max-width: 100%;
   }
