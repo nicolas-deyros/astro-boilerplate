@@ -18,6 +18,5 @@ export default defineConfig({
       transformer: "lightningcss",
     },
   },
-  output: "hybrid",
   integrations: [db(), mdx(), partytown(), sitemap()],
 });
