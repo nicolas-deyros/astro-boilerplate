@@ -229,7 +229,7 @@ Config the `commit-msg` file of the `.husky/`
 npx --no -- commitlint --edit \
 ```
 
-It will trigger commitlint. Commits should follow the (Conventional Commits)[https://www.conventionalcommits.org/en/v1.0.0/]
+It will trigger commitlint. Commits should follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 > **Notes:**
 > Adding TailwindCSS
@@ -266,3 +266,8 @@ export default {
   ],
 };
 ```
+
+> Updated to Astro 5.7
+
+- [Experimental Fonts API](https://astro.build/blog/astro-570/#experimental-fonts-api)
+- [SVG Components](https://astro.build/blog/astro-570/#svg-components)
