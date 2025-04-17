@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import db from "@astrojs/db";
 import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
@@ -19,4 +19,13 @@ export default defineConfig({
     },
   },
   integrations: [db(), mdx(), partytown(), sitemap()],
+  experimental: {
+    fonts: [
+      {
+        provider: fontProviders.google(),
+        name: "Roboto",
+        cssVariable: "--font-roboto",
+      },
+    ],
+  },
 });

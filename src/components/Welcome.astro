@@ -1,5 +1,5 @@
 ---
-import astroLogo from "@assets/astro.svg";
+import AstroLogo from "@assets/astro.svg";
 import background from "@assets/background.svg";
 import "@styles/Welcome.css";
 ---
@@ -8,14 +8,10 @@ import "@styles/Welcome.css";
   <img id="background" src={background.src} alt="" fetchpriority="high" />
   <main>
     <section id="hero">
-      <a href="https://astro.build"
-        ><img
-          src={astroLogo.src}
-          width="115"
-          height="48"
-          alt="Astro Homepage"
-        /></a
-      >
+      <a href="https://astro.build">
+        <AstroLogo width={115} height={48} fill="currentColor" />
+      </a>
+
       <h1>
         To get started, open the <code><pre>src/pages</pre></code> directory in your
         project.
